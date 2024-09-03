@@ -1,0 +1,101 @@
+.header {
+    background-color: #71b6f4;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.inputgrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 600px;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 0.1px;
+    padding-bottom: 5px;
+}
+
+.input label {
+    font-family: Arial, Helvetica, sans-serif;
+    flex: 0.5;
+    margin-right: 10px;
+}
+
+.input input {
+    font-family: Arial, Helvetica, sans-serif;
+    flex: 0.55;
+
+}
+
+.h1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.p {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.ref {
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 10px;
+}
+
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+
+
+.button {
+    display: inline-block;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #007bff;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.results {
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 30%;
+}
+
+.conclusion {
+    background-color: #e6e7e8;
+    color: #363636;
+    padding: 5px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}

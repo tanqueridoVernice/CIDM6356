@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+
+<body>
+    <div class="header">
+
+        <h1>Financial Fraud Detection Model</h1>
+    </div>
+    <p class="p">This application uses the model defined by Kanapickiene and Grundiene (2015) to detect financial fraud.
+    </p>
+    <h2 class="h2">Enter the financial data from a company's financial statement</h2>
+    <div class="inputgrid">
+        <div class="input">
+            <label for="cash">Cash: </label><input type="number" id="cash">
+        </div>
+        <div class="input">
+            <label for="inventory">Inventory: </label><input type="number" id="inventory">
+        </div>
+        <div class="input">
+            <label for="cassets">Current Assets: </label><input type="number" id="cassets">
+        </div>
+        <div class="input">
+            <label for="fassets">Fixed Assets: </label><input type="number" id="fassets">
+        </div class="input">
+        <div class="input">
+            <label for="tassets">Total Assets: </label><input type="number" id="tassets">
+        </div>
+        <div class="input">
+            <label for="cliabilities">Current Liabilities: </label><input type="number" id="cliabilities">
+        </div>
+        <div class="input">
+            <label for="tliabilities">Total Liabilities: </label><input type="number" id="tliabilities">
+        </div>
+        <div class="input">
+            <label for="sales">Sales: </label><input type="number" id="sales">
+        </div>
+    </div>
+    <div class="center-container">
+        <button class="button" onclick="getValue()">Calculate Fraud Probability</button>
+    </div>
+    <script src="script.js" async defer></script>
+    <div style="padding:20px"></div>
+    <div class="conclusion">
+        <h2 class="h2">Results and Conclusion</h2>
+    </div>
+    <div class="results">
+        <p>K-G Algorithm Score: <span id="KGscore"></span></p>
+    </div>
+    <div class="results">
+        <p>K-G Algorithm Probability of Fraud: <span id="Prob"></span></p>
+    </div>
+    <div class="results">
+        <p>Conclusion: <span id="Fraud"></span></p>
+    </div>
+    <div class="ref">
+        <p>References:</p>
+    </div>
+    <a class="ref"
+        href="https://pdf.sciencedirectassets.com/277811/1-s2.0-S1877042815X00486/1-s2.0-S1877042815059005/main.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEEaCXVzLWVhc3QtMSJHMEUCIFJ847cMIX8HPako6eDJMzS7sqlmXKe9G%2FU5obHXnnFjAiEA3zLqN9kxIbI08GQdgjz4B2OInOhHzJ09lMZhfjdFIA4qsgUIahAFGgwwNTkwMDM1NDY4NjUiDBT6GEB8%2BTWuiYg8AyqPBe6bIEZXBhTed%2B9%2Frbri8ge1Ek%2F%2BYR72qjyMO6qTysVS6G8OLBZ0bKAm0q0odhviXE0KWsW%2B%2F31xUMUgzfNSn9ybJ6JOzsFiTaORLZAVzZ6bZB0i5RrqveFs68I7CnlzG72WF5xgkLoO8OMBuT7b8lhKnSaGicDfhz%2Fi%2FdC4bxxYYzRWLzgEHkL378FiiyUGDqK6GhyO%2Bu28x6BZhhXQMEEzD8e70BVaf%2FpWeFNgzGtWRXA0iLEZQVl1Q5AifycOpeUMWaDOUPipG%2BjxF59xJY8G1KIXngyR7t4LqkUx9NNnSe%2BTyfDS2ZyZ3n6gaIjULcjjW028RVP2HhuDHjFqIngvLgtap1eA%2BUvgRMjGwHEn0UiiDbJeFOroiwI2eKWrdvXxVV6rSaGRsbrL%2BsoFBOmKiGW3WBDUF9P%2FYgpK4n0qLO8C8h8PwfavtHIiee7MXVsIETZmwSzaT1JgfL0TsGDADECCUhnsbmHyax1QDJxDj%2FuWUR1%2FUqo4JDvPy63AglrMBqF49ziTCz4VHW%2FADFFFe%2FCWO865jDXyCj88ZB1dokvdp7FiLDxpDfu0DUt2%2Fua3dfVp1sGdM0N%2BQbEu2cLA5mXSRRNwoW%2BUydlh1VZNgdfHafC6uoWwiM3GXX%2FgnXEUxFsGl7cyWLtVrzjApyNL0zLdsPEHvaUeJ0%2Bk8Rm%2FfCdFJYPUGUAp0cmbTnEtxadjoVzkvML6toUYQV2SWf1st9HkjPDXBDAWiymECzostTcEVAN%2FGXaHPp5HyUU%2FGur6xwN4O4ANjnDSmoELERmnyOK8%2BEgCQza%2BnP2NPbqt4Mm5CX7h7ly8EY4XnhbA93lZJT94X%2FH%2FzsQoRSeyvlaNfqZPSRnxP2MpOSB2BI0wlMmysAY6sQF29PrNujlyNZnCnwHY3K8%2BK2cEdL2PwuAuUoVsAk5tkHDxtn8HaPwE0vDuFkS1l5o1AiBiHXBHzUUet4tM5cUKHgRnrda0uYTpw9BvewfKPsibdi5EjxQt2HEpDUqFHfA56%2FRXdLFg%2Bqt5uDeUG3ghJqLEUzXgEa8wwi4fdIG0CoERB30eM15A89UI1OGheb41NX0dg7eu01fV2OwxW5GuE9ROzFGX7HecqoVJWUTBwVI%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240403T013155Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAQ3PHCVTYYQTA6WXZ%2F20240403%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=d0f0737f2679f681435f55ce42de3f2558da8692240264438e69b354deb3229a&hash=127b49815607ce475d908dc4b8377da646bdc7e2d65b8e66ece9e89effcf72b6&host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&pii=S1877042815059005&tid=spdf-2b1da3c2-2fd9-45d5-b460-98b16027135d&sid=8f85dd3764e194404f6827d644ee6425e4a4gxrqa&type=client&tsoh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&ua=0f175c530652520b5606&rr=86e54d4a49774684&cc=us">Rasa
+        Kanapickienė, Živilė Grundienė,
+        The Model of Fraud Detection in Financial Statements by Means of Financial Ratios,
+        Procedia - Social and Behavioral Sciences,
+        Volume 213,
+        2015,
+        Pages 321-327,
+        ISSN 1877-0428,
+        https://doi.org/10.1016/j.sbspro.2015.11.545.</p>
+</body>
+
+</html>
